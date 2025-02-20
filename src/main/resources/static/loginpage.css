@@ -1,0 +1,132 @@
+/* General styling */
+body, html {
+    font-family: 'Arial', sans-serif;
+    background: #fdfaf2;
+    background-image: linear-gradient(-182deg, #fdfaf2, #fdf5e4);
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar styling */
+.navbar {
+    font-family: 'Inter';
+    color: white;
+    height: 85px;
+    background-image: linear-gradient(97deg, #cf6570, #dfb4b9);
+    /*background-color: #539553;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar > a {
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 89%;
+
+    /*border: 8px solid black;*/
+}
+
+.loginText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Inter;
+    font-weight: bold;
+    font-size: 40pt;
+    color: #565656;
+
+    /*background-color: red;*/
+}
+
+.loginContainer {
+    background-color: white;
+    width: 450px;
+    height: 500px;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+
+    border-radius: 5px;
+    margin-bottom: 120px;
+
+    /*box-shadow: 3px 3px 20px #8a7777;*/
+    /*-webkit-box-shadow:0 0 50px #000000;*/
+    /*-moz-box-shadow: 0 0 9px #000000;*/
+    box-shadow:0 0 10px 1px #eaeaea;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0px;
+    width: 75%;
+
+    font-family: Inter;
+    color: #565656;
+    /*background-color: #539553;*/
+    padding: 0px;
+}
+
+label {
+    width: 96%;
+    font-size: 20pt;
+    color: #6e6e6e;
+    margin-bottom: 8px;
+}
+
+input[type=button] {
+    background-color: #56a156;
+    font-family: Inter;
+    font-weight: bolder;
+    color: white;
+    width: 50%;
+    font-size: 20pt;
+    margin-top: 20px;
+    cursor:pointer;
+}
+
+input {
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 90%;
+    padding: 10px;
+
+    background-color: #D9D9D9;
+
+    font-family: Inter;
+    font-size: medium;
+    color: #303030;
+}
+
+.optionsText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    color: #68B168;
+    font-family: Inter;
+}
+
+.optionsText > b {
+    cursor: pointer;
+}
+
