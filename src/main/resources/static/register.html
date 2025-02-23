@@ -23,14 +23,27 @@
         <div class="container">
             <a class="registerText">Register</a>
             <div class="registerContainer">
-                <form class="registerForm">
+                <form id="REG" class="registerForm">
+
                     <div class="schoolInfo">
                         <a>School Information</a>
-                        <input type="text" placeholder="School Name">
+                        <label for="info"></label>
+                        <input type="text" id="info" name="info" placeholder="School Name">
+
+                        <label for="type"></label>
+                        <input type="text" id="type" name="type" placeholder="School Type">
                     </div>
+
                     <div class="schoolAddress">
                         <a>Address</a>
-                        <input type="text" placeholder="State, Area">
+                        <label for="address"></label>
+                        <input type="text" id="address" name="address" placeholder="State, Area">
+
+                        <label for="postcode"></label>
+                        <input type="text" id="postcode" name="postcode" placeholder="Postal Code">
+
+                        <label for="detail"></label>
+                        <input type="text" id="detail" name="detail" placeholder="School Lot No, Building, Street Name">
                     </div>
 <!--                    <label for="username">username</label>-->
 <!--                    <input type="text" value="">-->
@@ -41,6 +54,8 @@
 <!--                    <br>-->
 <!--                    <input type="button" value="Sign In">-->
                 </form>
+                <label for="register"></label>
+                <input type="submit" form="REG" id="register" value="Register">
             </div>
         </div>
     </body>

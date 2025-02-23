@@ -89,7 +89,7 @@ label {
     margin-bottom: 8px;
 }
 
-input[type=button] {
+input[type=submit] {
     background-color: #56a156;
     font-family: Inter;
     font-weight: bolder;
