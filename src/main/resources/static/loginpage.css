@@ -116,6 +116,11 @@ input {
     color: #303030;
 }
 
+.loginForm input:focus {
+    box-shadow:0 0 10px 1px #eae8ea;
+    outline: 1px solid #68B168;
+}
+
 .optionsText {
     display: flex;
     flex-direction: column;
