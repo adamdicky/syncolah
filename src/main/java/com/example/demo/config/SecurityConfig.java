@@ -1,0 +1,31 @@
+package com.example.demo.config;
+
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.web.DefaultSecurityFilterChain;
+
+@Configuration
+@EnableAutoConfiguration
+public class SecurityConfig {
+
+    @Bean
+    public DefaultSecurityFilterChain securityFilterChain (HttpSecurity http) throws Exception {
+        return http
+                .authorizeHttpRequests (auth->auth
+                        .requestMatchers("/").permitAll()
+                        .requestMatchers("/login").permitAll()
+                        .requestMatchers("/logout").permitAll()
+                        .requestMatchers("/register").permitAll()
+                        .anyRequest().authenticated()
+                )
+
+                .formLogin(form->form
+                        .defaultSuccessUrl("/", true)
+                )
+
+                .logout(config->config.logoutSuccessUrl("/"))
+                .build();
+    }
+}

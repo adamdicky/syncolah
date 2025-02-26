@@ -2,15 +2,12 @@
 <html lang="en">
 <head>
     <!-- Required meta tags -->
-    <link rel="stylesheet" href="/loginpage.css">
+    <link rel="stylesheet" href="/css/signup.css">
 
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
 
     <title>Login</title>
 
@@ -22,9 +19,9 @@
 </div>
 
 <div class="container">
-    <a class="loginText">Login</a>
+    <a class="loginText">Sign Up</a>
     <div class="loginContainer">
-        <form class="loginForm">
+        <form class="loginForm" action="/signup" method="post">
             <label for="username">username</label>
             <input type="text" id="username" name="username">
             <br>
@@ -32,13 +29,8 @@
             <input type="password" id="password" name="password">
             <br>
             <br>
-            <input type="submit" value="Sign In">
+            <input type="submit" value="Sign Up">
         </form>
-
-        <div class="optionsText">
-            <b><u>Forgot password?</u></b>
-            <b>Don't have an account? <b><u>Sign up here.</u></b></b>
-        </div>
     </div>
 </div>
 
