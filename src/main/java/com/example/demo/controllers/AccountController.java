@@ -26,7 +26,8 @@ public class AccountController {
     public String register(Model model) {
         RegisterDTO registerDTO = new RegisterDTO();
         model.addAttribute(registerDTO);
-        return "register";
+        model.addAttribute("success", false);
+        return "register"; //return tu register.html
     }
 
     @PostMapping("/register")
@@ -66,11 +67,15 @@ public class AccountController {
 
             repo.save(newUser);
 
+            model.addAttribute("registerDTO", new RegisterDTO());
+            model.addAttribute("success", true);
+
+
         } catch (Exception e)
             {
                 result.addError(new FieldError("registerDTO", "firstName", e.getMessage()));
             }
 
-        return "register";
+        return "register"; //return to register.html
     }
 }
