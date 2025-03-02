@@ -21,12 +21,13 @@ public class SecurityConfig {
                         .requestMatchers("/login").permitAll()
                         .requestMatchers("/registerschool").permitAll()
                         .requestMatchers("/register").permitAll()
+                        .requestMatchers("/css/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .formLogin(form -> form
                         .defaultSuccessUrl("/index.html", true)
                 )
-                .logout(config -> config.logoutSuccessUrl("/"))
+                .logout(config -> config.logoutSuccessUrl("/index.html"))
                 .build();
     }
 
@@ -34,4 +35,6 @@ public class SecurityConfig {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
+
 }
