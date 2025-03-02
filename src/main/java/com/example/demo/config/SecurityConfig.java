@@ -17,11 +17,11 @@ public class SecurityConfig {
                         .requestMatchers("/").permitAll()
                         .requestMatchers("/index").permitAll()
                         .requestMatchers("/login").permitAll()
-                        .requestMatchers("/register").permitAll()
+                        .requestMatchers("/registerschool").permitAll()
                         .anyRequest().authenticated()
                 )
                 .formLogin(form -> form
-                        .defaultSuccessUrl("/", true)
+                        .defaultSuccessUrl("/index.html", true)
                 )
                 .logout(config -> config.logoutSuccessUrl("/"))
                 .build();
