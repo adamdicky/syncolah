@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <!-- Required meta tags -->
-    <link rel="stylesheet" href="/css/signup.css">
+    <link rel="stylesheet" th:href="@{/css/signup.css}">
 
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
 
@@ -21,14 +21,44 @@
 <div class="container">
     <a class="loginText">Sign Up</a>
     <div class="loginContainer">
-        <form class="loginForm" action="/signup" method="post">
-            <label for="username">username</label>
-            <input type="text" id="username" name="username">
+        <form class="loginForm" method="post" th:object="${registerDTO}">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+
+            <label>First Name</label>
+            <input type="text" th:field="${registerDTO.firstName}">
+            <p th:if="${#fields.hasErrors('firstName')}" th:errorclass="text-danger" th:errors="${registerDTO.firstName}"></p>
             <br>
-            <label for="password">password</label>
-            <input type="password" id="password" name="password">
+
+            <label>Last Name</label>
+            <input type="text" th:field="${registerDTO.lastName}">
+            <p th:if="${#fields.hasErrors('lastName')}" th:errorclass="text-danger" th:errors="${registerDTO.lastName}"></p>
             <br>
+
+            <label>Email</label>
+            <input type="text" th:field="${registerDTO.email}">
+            <p th:if="${#fields.hasErrors('email')}" th:errorclass="text-danger" th:errors="${registerDTO.email}"></p>
             <br>
+
+            <label>Phone</label>
+            <input type="text" th:field="${registerDTO.phone}">
+            <p th:if="${#fields.hasErrors('phone')}" th:errorclass="text-danger" th:errors="${registerDTO.phone}"></p>
+            <br>
+
+            <label>Password</label>
+            <input type="password" th:field="${registerDTO.password}">
+            <p th:if="${#fields.hasErrors('password')}" th:errorclass="text-danger" th:errors="${registerDTO.password}"></p>
+            <br>
+
+            <label>Confirm Password</label>
+            <input type="password" th:field="${registerDTO.confirmPassword}">
+            <p th:if="${#fields.hasErrors('confirmPassword')}" th:errorclass="text-danger" th:errors="${registerDTO.confirmPassword}"></p>
+            <br>
+
+<!--            <label for="password">password</label>-->
+<!--            <input type="password" id="password" name="password">-->
+<!--            <br>-->
+<!--            <br>-->
+
             <input type="submit" value="Sign Up">
         </form>
     </div>
