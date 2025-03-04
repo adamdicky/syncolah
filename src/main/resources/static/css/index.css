@@ -1,0 +1,62 @@
+ html, body {
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+   padding-left: 170px;
+    padding-right: 170px;
+    background-color: #FFFFED;
+}
+
+.navbar {
+    width: 100%;
+    height: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: auto;
+    /*background-color: #49e374;*/
+
+    display: flex;
+    flex-direction: row;
+}
+
+.logo {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.logo > a {
+    font-family: "Reddit Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-size: 20pt;
+    text-decoration: none;
+}
+
+.menu {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    column-gap: 40px;
+}
+
+.menu > a {
+    font-family: "Reddit Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-size: 20pt;
+    text-decoration: none;
+    color: black;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background-color: #cdcd34;
+}
