@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/register.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Register</title>
+</head>
+<body>
+<div class="navbar">
+    <div class="logo">
+        <a>syncolah.</a>
+    </div>
+    <div class="menu">
+        <a href="/contacts">Contacts</a>
+        <a href="/register">Register</a>
+        <a href="/login">Login</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="container-register">
+        <a>Register</a>
+        <form id="REG" class="register-form" method="POST" th:object="${registerDTO}">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+
+            <label for="firstName">First Name</label><br>
+            <input id="firstName" type="text" th:field="${registerDTO.firstName}">
+            <p th:if="${#fields.hasErrors('firstName')}" th:errorclass="text-danger" th:errors="${registerDTO.firstName}"></p>
+
+            <label for="lastName">Last Name</label><br>
+            <input id="lastName" type="text" th:field="${registerDTO.lastName}">
+            <p th:if="${#fields.hasErrors('lastName')}" th:errorclass="text-danger" th:errors="${registerDTO.lastName}"></p>
+
+            <label for="email">Email</label><br>
+            <input id="email" type="text" th:field="${registerDTO.email}">
+            <p th:if="${#fields.hasErrors('email')}" th:errorclass="text-danger" th:errors="${registerDTO.email}"></p>
+
+            <label for="phone">Phone</label><br>
+            <input id="phone" type="text" th:field="${registerDTO.phone}">
+            <p th:if="${#fields.hasErrors('phone')}" th:errorclass="text-danger" th:errors="${registerDTO.phone}"></p>
+
+            <label for="password">Password</label><br>
+            <input id="password" type="password" th:field="${registerDTO.password}">
+            <p th:if="${#fields.hasErrors('password')}" th:errorclass="text-danger" th:errors="${registerDTO.password}"></p>
+
+            <label for="confirmpass">Confirm Password</label><br>
+            <input id="confirmpass" type="password" th:field="${registerDTO.confirmPassword}">
+            <p th:if="${#fields.hasErrors('confirmPassword')}" th:errorclass="text-danger" th:errors="${registerDTO.confirmPassword}"></p>
+        </form>
+        <input type="submit" form="REG" value="Register"/>
+    </div>
+</div>
+</body>
+</html>
