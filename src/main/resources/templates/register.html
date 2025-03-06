@@ -1,34 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="/css/register.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Register</title>
-    </head>
-    <body>
-    <div class="navbar">
-        <div class="logo">
-            <a>syncolah.</a>
-        </div>
-        <div class="menu">
-            <a href="/contacts">Contacts</a>
-            <a href="/register">Register</a>
-            <a href="/login">Login</a>
-        </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/registertemplate.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Register</title>
+</head>
+<body>
+<div class="navbar">
+    <div class="logo">
+        <a>syncolah.</a>
     </div>
+    <div class="menu">
+        <a href="/contacts">Contacts</a>
+        <a href="/register">Register</a>
+        <a href="/login">Login</a>
+    </div>
+</div>
 
-    <div class="container">
-        <div class="container-content-1">
-            <a>A</a>
-        </div>
-        <div class="container-content-2">
-            <a>B</a>
-        </div>
+<div class="container">
+    <div class="container-register">
+        <a>Register</a>
+        <form id="REG" class="register-form" method="POST" th:object="${registerDTO}">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+
+            <label for="firstName">
+                First Name <br><input id="firstName" type="text" th:field="${registerDTO.firstName}">
+            </label><br>
+            <p th:if="${#fields.hasErrors('firstName')}" th:errorclass="text-danger" th:errors="${registerDTO.firstName}"></p>
+
+
+            <label for="lastName">
+                Last Name <br><input id="lastName" type="text" th:field="${registerDTO.lastName}">
+            </label><br>
+            <p th:if="${#fields.hasErrors('lastName')}" th:errorclass="text-danger" th:errors="${registerDTO.lastName}"></p>
+
+
+            <label for="email">
+                Email <br> <input id="email" type="text" th:field="${registerDTO.email}">
+            </label><br>
+            <p th:if="${#fields.hasErrors('email')}" th:errorclass="text-danger" th:errors="${registerDTO.email}"></p>
+
+            <label for="phone">
+                Phone <br> <input id="phone" type="text" th:field="${registerDTO.phone}">
+            </label><br>
+            <p th:if="${#fields.hasErrors('phone')}" th:errorclass="text-danger" th:errors="${registerDTO.phone}"></p>
+
+
+            <label for="password">
+                Password <br> <input id="password" type="password" th:field="${registerDTO.password}">
+            </label><br>
+            <p th:if="${#fields.hasErrors('password')}" th:errorclass="text-danger" th:errors="${registerDTO.password}"></p>
+
+
+            <label for="confirmpass">
+                Confirm Password <br> <input id="confirmpass" type="password" th:field="${registerDTO.confirmPassword}">
+            </label><br>
+            <p th:if="${#fields.hasErrors('confirmPassword')}" th:errorclass="text-danger" th:errors="${registerDTO.confirmPassword}"></p>
+
+        </form>
+        <input type="submit" form="REG" value="Register"/>
     </div>
-    </body>
+</div>
+</body>
 </html>
