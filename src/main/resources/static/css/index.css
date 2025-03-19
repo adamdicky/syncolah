@@ -5,14 +5,13 @@
 
 body {
     margin: 0;
-    padding: 0 170px;
+    padding: 20px 240px;
     background-color: #fffff5;
     /*min-height: 100vh;*/
 }
 
 nav {
-    background-color: white;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fffff5;
     font-family: "Reddit Sans", sans-serif;
     font-weight: bold;
     font-size: 20pt;
@@ -41,42 +40,59 @@ nav a {
 }
 
 nav a:hover {
-    background-color: lightgray;
+    /*background-color: lightgray;*/
+    color: #cdcd34;
 }
 
 nav li:first-child {
     margin-right: auto;
 }
 
-.navbar {
-    width: 100%;
-    height: 100%;
-    padding-top:30px;
-    padding-bottom: 30px;
-    margin: auto;
-    /*background-color: #49e374;*/
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
 
-    display: flex;
-    flex-direction: row;
-}
-
-.logo {
-    width: 100%;
-    height: 100%;
-
-    display: flex;
-    flex-direction: row;
+    backdrop-filter: blur(20px);
+    background: #fffff5;
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: flex-start;
 }
 
-.logo > a {
-    font-family: "Reddit Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: bold;
-    font-size: 20pt;
-    text-decoration: none;
-    color: #424242;
+.sidebar li {
+    width: 100%;
 }
+
+.sidebar a {
+    width: 100%;
+}
+
+.menu-button {
+    display: none;
+}
+
+@media(max-width: 1200px) {
+    .hideOnMobile {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+    }
+}
+
+@media(max-width: 430px) {
+    .sidebar {
+        width: 100%;
+    }
+}
+
 
 .menu {
     width: 100%;

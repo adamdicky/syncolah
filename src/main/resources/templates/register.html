@@ -13,16 +13,21 @@
     </head>
 
     <body>
-        <div class="navbar">
-            <div class="logo">
-                <a>syncolah.</a>
-            </div>
-            <div class="menu">
-                <a href="/contacts">Contacts</a>
-                <a href="/register">Register</a>
-                <a href="/login">Login</a>
-            </div>
-        </div>
+        <nav>
+            <ul class="sidebar">
+                <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000000FF"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                <li><a href="/contacts">Contacts</a></li>
+                <li><a href="/register">Register</a></li>
+                <li><a href="/login">Login</a></li>
+            </ul>
+            <ul>
+                <li><a>syncolah.</a></li>
+                <li class="hideOnMobile"><a href="/contacts">Contacts</a></li>
+                <li class="hideOnMobile"><a href="/register">Register</a></li>
+                <li class="hideOnMobile"><a href="/login">Login</a></li>
+                <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000000FF"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+            </ul>
+        </nav>
 
         <div class="container">
             <div class="container-register">
