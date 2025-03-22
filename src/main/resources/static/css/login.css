@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 20px 240px;
+    background-color: #fffff5;
+    /*min-height: 100vh;*/
+}
+
+nav {
+    background-color: #fffff5;
+    font-family: "Reddit Sans", sans-serif;
+    font-weight: bold;
+    font-size: 20pt;
+    text-decoration: none;
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav li {
+    height: 50px;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+nav a:hover {
+    /*background-color: lightgray;*/
+    color: #cdcd34;
+}
+
+nav li:first-child {
+    margin-right: auto;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+
+    backdrop-filter: blur(20px);
+    background: #fffff5;
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar li {
+    width: 100%;
+}
+
+.sidebar a {
+    width: 100%;
+}
+
+.menu-button {
+    display: none;
+}
+
+@media(max-width: 1200px) {
+    .hideOnMobile {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+    }
+}
+
+@media(max-width: 430px) {
+    .sidebar {
+        width: 100%;
+    }
+}
+
+
+.menu {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    column-gap: 40px;
+}
+
+.menu > a {
+    font-family: "Reddit Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-size: 20pt;
+    text-decoration: none;
+    color: #424242;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background-color: #cdcd34;
+}
